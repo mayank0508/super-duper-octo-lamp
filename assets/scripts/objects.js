@@ -1,25 +1,16 @@
-const movielist = document.getElementById('movie-list');
-movielist.style['background-color'] ='red';
-movielist.style.display = 'block';
+searchBox = document.getElementById('search-btn');
+addMovieButton = document.getElementById('add-movie-btn');
 
-// const advi = 'mayank1'
-const key = 'mayank'
+const addMovieHandler = () => {
+  const title = document.getElementById('title').value;
+  const extraName = document.getElementById('extra-name').value;
+  const extraValue = document.getElementById('extra-value').value;
+}
 
-const person = {
-  'first-name': 'John',
-  sex: 'M',
-  [key]: 'mm',
-  hobbies: ['football', 'cricket'],
-  greet: function() {
-    alert('Hello')
-  }
-};
-
-person.isAdmin = true;
-
-delete person.sex;
-// person.greet();
-
-console.log(person);
-console.log(person['mayank']);
-console.log(person["first-name"]);
+if (
+  title.trim() === '' ||
+  extraName.trim() === '' ||
+  extraValue.trim()
+) {
+  return;
+}
