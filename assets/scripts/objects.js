@@ -18,7 +18,7 @@ const renderMovie = () => {
        const movieEL = document.createElement('li');
        let text = movie.info.title + '-';
        for (const key in movie.info){
-         if (key !== movie.info[key]){
+         if (key !== 'title'){
               text = text + `${key}: ${movie.info[key]}`
          }
        }
