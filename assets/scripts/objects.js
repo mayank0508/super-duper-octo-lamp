@@ -16,7 +16,13 @@ const renderMovie = () => {
 
    movies.forEach((movie) => {
        const movieEL = document.createElement('li');
-       movieEL.textContent = movies.info.title;
+       let text = movie.info.title + '-';
+       for (const key in movie.info){
+         if (key !== movie.info[key]){
+              text = text + `${key}: ${movie.info[key]}`
+         }
+       }
+       movieEL.textContent = text;
        movieList.append(movieEL);
    });
 };
@@ -39,7 +45,7 @@ const addMovieHandler = () => {
       title,
       [extraName]: extraValue
     },
-    id: Math.random(),
+    id: Math.random()
   };
   
   movies.push(newMovie);
